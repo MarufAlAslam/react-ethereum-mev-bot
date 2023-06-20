@@ -3,7 +3,7 @@
   font-family: "Source Code Pro", monospace;
 }
 
-.logo{
+.logo, .poppins{
   font-family: 'Poppins', sans-serif;
 }
 @tailwind base;

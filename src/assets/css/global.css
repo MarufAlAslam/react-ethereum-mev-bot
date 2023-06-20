@@ -1,0 +1,51 @@
+body, html{
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+}
+
+.custom-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+@media (min-width: 576px){
+    .custom-container{
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px){
+    .custom-container{
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px){
+    .custom-container{
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px){
+    .custom-container{
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 1400px){
+    .custom-container{
+        max-width: 1320px;
+    }
+}
+
+@media (min-width: 1600px){
+    .custom-container{
+        max-width: 1500px;
+    }
+}
+
+.spacing{
+    letter-spacing: 5px;
+}
