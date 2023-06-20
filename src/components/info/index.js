@@ -5,7 +5,7 @@ const Info = () => {
     <div className="info py-6">
       <div className="custom-container">
         <div className="border border-[#393939] rounded-md flex items-center overflow-hidden">
-          <button className="text-white px-4 py-2 tab-btn active rounded border-r border-[#393939]">
+          <button className="text-white p-4 tab-btn active rounded border-r border-[#393939]">
             Mempool Invader
           </button>
           <button className="text-white py-2 tab-btn rounded">
