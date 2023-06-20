@@ -49,3 +49,6 @@ body, html{
 .spacing{
     letter-spacing: 5px;
 }
+.tab-btn.active{
+    background-color: #1D1D1D;
+}
