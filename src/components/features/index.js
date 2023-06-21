@@ -1,5 +1,13 @@
 import React from "react";
 import iocn1 from "../../assets/images/svg/icon1.svg";
+import icon2 from "../../assets/images/svg/icon2.svg";
+import icon3 from "../../assets/images/svg/icon3.svg";
+import icon4 from "../../assets/images/svg/icon4.svg";
+import icon5 from "../../assets/images/svg/icon5.svg";
+import icon6 from "../../assets/images/svg/icon6.svg";
+import icon7 from "../../assets/images/svg/icon7.svg";
+import icon8 from "../../assets/images/svg/icon8.svg";
+import shape from "../../assets/images/svg/shape.svg";
 
 const Features = () => {
   const featureData = [
@@ -7,6 +15,48 @@ const Features = () => {
       id: 1,
       title: "Highest Profits",
       img: iocn1,
+      desc: "Lorem Ipsum is simply dummy text of the prin ting and type setting industry. Lorem Ipsum.",
+    },
+    {
+      id: 2,
+      title: "No Risk",
+      img: icon2,
+      desc: "Lorem Ipsum is simply dummy text of the prin ting and type setting industry. Lorem Ipsum.",
+    },
+    {
+      id: 3,
+      title: "Safe",
+      img: icon3,
+      desc: "Lorem Ipsum is simply dummy text of the prin ting and type setting industry. Lorem Ipsum.",
+    },
+    {
+      id: 4,
+      title: "Ai on Board",
+      img: icon4,
+      desc: "Lorem Ipsum is simply dummy text of the prin ting and type setting industry. Lorem Ipsum.",
+    },
+    {
+      id: 5,
+      title: "Fully Automatic",
+      img: icon5,
+      desc: "Lorem Ipsum is simply dummy text of the prin ting and type setting industry. Lorem Ipsum.",
+    },
+    {
+      id: 6,
+      title: "User Friendly",
+      img: icon6,
+      desc: "Lorem Ipsum is simply dummy text of the prin ting and type setting industry. Lorem Ipsum.",
+    },
+    {
+      id: 7,
+      title: "Web3",
+      img: icon7,
+      desc: "Lorem Ipsum is simply dummy text of the prin ting and type setting industry. Lorem Ipsum.",
+    },
+    {
+      id: 8,
+      title: "Open Source",
+      img: icon8,
       desc: "Lorem Ipsum is simply dummy text of the prin ting and type setting industry. Lorem Ipsum.",
     },
   ];
@@ -20,17 +70,24 @@ const Features = () => {
         </div>
 
         <div className="mt-10">
-          <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-4">
+          <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-6">
             {featureData.map((item, index) => (
-              <div className="feature-card bg-[#242424] rounded-md p-6">
-                <div className="flex items-center gap-4 bg-[#94FEBF]">
-                  <img src={item.img} alt="" />
-                  <h1 className="text-black text-xl ml-2">
-                    {item.title}
-                  </h1>
+              <div className="feature-card rounded-md">
+                <div className="inline-flex items-center py-3 pl-4 pr-4 bg-[#94FEBF] rounded-t-md relative">
+                  <div className="relative z-20 flex justify-start items-center">
+                    <img src={item.img} alt="" />
+                    <h1 className="text-black text-xl ml-2">{item.title}</h1>
+                  </div>
+                  <img
+                    src={shape}
+                    alt=""
+                    className="shape absolute h-full right-[-40px]"
+                  />
                 </div>
 
-                <p className="text-white text-base mt-4">{item.desc}</p>
+                <div className="card-body bg-[#0E1F17] border-2 border-[#589B74] rounded-r-md rounded-b-md p-6">
+                  <p className="text-white text-base">{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>
