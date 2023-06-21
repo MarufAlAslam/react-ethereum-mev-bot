@@ -61,7 +61,7 @@ const Features = () => {
     },
   ];
   return (
-    <div className="features py-6">
+    <div className="features py-12">
       <div className="custom-container">
         <div className="border border-[#393939] rounded-md flex items-center overflow-hidden">
           <button className="text-white p-4 tab-btn active rounded border-r border-[#393939]">
@@ -72,7 +72,7 @@ const Features = () => {
         <div className="mt-10">
           <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-6">
             {featureData.map((item, index) => (
-              <div className="feature-card rounded-md">
+              <div key={index} className="feature-card rounded-md">
                 <div className="inline-flex items-center py-3 pl-4 pr-4 bg-[#94FEBF] rounded-t-md relative">
                   <div className="relative z-20 flex justify-start items-center">
                     <img src={item.img} alt="" />
