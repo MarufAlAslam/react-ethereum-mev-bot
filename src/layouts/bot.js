@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Manage from "../components/manage";
 import Activity from "../components/activity";
+import RefferCode from "../components/reffer-code";
 
 const BotLayout = () => {
   const manageData = [
@@ -102,7 +103,12 @@ const BotLayout = () => {
           <div className="w-6/12">
             <Outlet />
           </div>
-          <div className="w-3/12 p-2 bg-white"></div>
+          <div className="w-3/12">
+            <RefferCode />
+            <div className="mt-12">
+              <RefferCode />
+            </div>
+          </div>
         </div>
       </div>
     </div>
