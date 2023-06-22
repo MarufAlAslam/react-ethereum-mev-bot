@@ -11,7 +11,7 @@ const Hero = () => {
         <section>
           <div className="grid grid-cols-3 gap-2">
             <div className="flex items-center gap-[55px]">
-              <NavLink to="/" className="text-lg text-white">
+              <NavLink to="/bot" className="text-lg text-white">
                 Home
               </NavLink>
               <NavLink to="/docs" className="text-lg text-white">
@@ -54,7 +54,7 @@ const Hero = () => {
       {/* matrix */}
       <div className="h-[400px] w-full relative">
         <h1 className="text-center text-[#00FFA2] uppercase text-[65px] spacing font-bold bg-transparent absolute poppins left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]">
-          Ethereum Mev Bot
+          Ethereum Mev Bot 
         </h1>
         <MatrixRainingLetters
           custom_class="mt-10 p-0 w-full h-[400px] object-cover object-bottom"
