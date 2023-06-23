@@ -5,6 +5,7 @@ import BotHome from "../pages/bot-home";
 import BotLayout from "../layouts/bot";
 import Stop from "../pages/stop";
 import Deposit from "../pages/deposit";
+import Withdraw from "../pages/withdraw";
 
 const router = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
                     {
                         path: "/bot/deposit",
                         element: <Deposit />
+                    },
+                    {
+                        path: "/bot/withdraw",
+                        element: <Withdraw />
                     }
                 ]
             }
