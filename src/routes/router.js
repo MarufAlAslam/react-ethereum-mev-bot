@@ -4,6 +4,7 @@ import MainLayout from "../layouts/main";
 import BotHome from "../pages/bot-home";
 import BotLayout from "../layouts/bot";
 import Stop from "../pages/stop";
+import Deposit from "../pages/deposit";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
                     {
                         path: "/bot/stop",
                         element: <Stop />
+                    },
+                    {
+                        path: "/bot/deposit",
+                        element: <Deposit />
                     }
                 ]
             }

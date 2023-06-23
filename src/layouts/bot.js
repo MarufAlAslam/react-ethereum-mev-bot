@@ -27,7 +27,7 @@ const BotLayout = () => {
         </svg>
       ),
       title: "Deposit",
-      link: "/bot/depostit",
+      link: "/bot/deposit",
     },
     {
       id: 2,
