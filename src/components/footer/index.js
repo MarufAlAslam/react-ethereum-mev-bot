@@ -9,7 +9,14 @@ const Footer = () => {
         <section>
           <div className="grid grid-cols-3 gap-2">
             <div className="flex items-center gap-[55px]">
-              <p className="text-lg text-white">Mev Bot © Copyright 2023</p>
+              <div className="flex justify-start items-center gap-3">
+                <Link to="/terms" className="text-white p-1 text-lg">
+                  Terms of Use
+                </Link>
+                <Link to="/privacy-policy" className="text-white p-1 text-lg">
+                  Privacy Policy
+                </Link>
+              </div>
             </div>
             <div className="text-center flex justify-center items-center">
               <img src={logo} alt="logo" className="mr-3" />
@@ -142,6 +149,8 @@ const Footer = () => {
               </div>
             </div>
           </div>
+
+          <p className="text-lg text-white mt-4 text-center">Mev Bot © Copyright 2023</p>
         </section>
       </div>
     </div>

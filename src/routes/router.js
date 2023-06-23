@@ -8,6 +8,7 @@ import Deposit from "../pages/deposit";
 import Withdraw from "../pages/withdraw";
 import Settings from "../pages/settings";
 import Buy from "../pages/buy";
+import Terms from "../pages/terms-of-use";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
             {
                 path: "/buy",
                 element: <Buy/>
+            },
+            {
+                path: "/terms",
+                element: <Terms/>
             },
             {
                 path: "/bot",

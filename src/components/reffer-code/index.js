@@ -18,12 +18,18 @@ const RefferCode = () => {
 
       <div className="border-2 flex flex-col gap-4 border-[#393939] p-5 rounded-r rounded-b">
         <div className="text-center">
-            <span className="text-xl inline-block px-3 py-1 border border-[#393939] rounded mb-4 bg-[#1D1D1D]">
-                QQ64
-            </span>
-            <p className="text-white">
-                Reffer your friends and they will get 10% discount on their first depostit. You make an extra 5% on their points.
-            </p>
+          <span className="text-xl inline-block px-3 py-1 border border-[#393939] rounded mb-4 bg-[#1D1D1D]">
+            QQ64
+          </span>
+          <p className="text-white">
+            Reffer your friends and You make an extra 5% on their points.
+          </p>
+
+          <div className="mt-5">
+            <button className="btn text-center btn-green flex w-auto mx-auto justify-center items-center border-2 border-[#589B74] bg-[#0E1F17] rounded-md px-4 py-2">
+              Go
+            </button>
+          </div>
         </div>
       </div>
     </div>

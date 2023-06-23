@@ -7,28 +7,28 @@ const Buy = () => {
             id: 1,
             name: "Montly",
             popular: false,
-            price: 250,
+            price: 5,
             plan: "per month",
             included: [
                 "No Trial Period",
                 "Unlock Full Bot Potential",
                 "Max Profit per Cycle",
                 "24/7 Priority support",
-                "Convert Profits to Stable Coins"
+                "15% Bot's fee"
             ]
         },
         {
             id: 2,
             name: "Yearly",
             popular: true,
-            price: 999,
+            price: 10,
             plan: "per month",
             included: [
                 "No Trial Period",
                 "Unlock Full Bot Potential",
                 "Max Profit per Cycle",
                 "24/7 Priority support",
-                "Convert Profits to Stable Coins"
+                "7% Bot's fee"
             ]
         }
     ]
@@ -51,7 +51,7 @@ const Buy = () => {
                                     </h2>
                                     <div className='text-rigth flex flex-col justify-end items-end'>
                                         <h2 className='text-3xl'>
-                                            ${pack.price}
+                                            {pack.price} ETH
                                         </h2>
                                         <p className='text-[#707070]'>
                                             /{pack.plan}
@@ -84,7 +84,7 @@ const Buy = () => {
 
                                 <Link to={'/bot/start'} className="btn btn-green flex mt-8 w-full justify-between items-center border-2 border-[#589B74] bg-[#0E1F17] rounded-md px-4 py-3">
                                     <div className="flex justify-start items-center gap-3">
-                                        <span className="ls-2 text-white">Start 30 days Trial</span>
+                                        <span className="ls-2 text-white">Buy Now</span>
                                     </div>
 
                                     <svg xmlns="http://www.w3.org/2000/svg" width="22.428" height="18.695" viewBox="0 0 22.428 18.695">

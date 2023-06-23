@@ -18,12 +18,12 @@ const Hero = () => {
                 Documentation
               </NavLink>
             </div>
-            <div className="text-center flex justify-center items-center">
+            <NavLink to={'/'} className="text-center flex justify-center items-center">
               <img src={logo} alt="logo" className="mr-3" />
               <h1 className="text-white text-2xl font-bold uppercase logo">
                 Mev Bot
               </h1>
-            </div>
+            </NavLink>
             <div className="text-center flex justify-end items-center ">
               <div className="bg-[#242424] flex rounded items-center">
                 <div className="icon-holder p-3 bg-[#0E1F17] border-2 border-[#589B74] rounded">
@@ -57,6 +57,7 @@ const Hero = () => {
           Ethereum Mev Bot 
         </h1>
         <MatrixRainingLetters
+          text="Ethereum Mev Bot"
           custom_class="mt-10 p-0 w-full h-[400px] object-cover object-bottom"
         />
       </div>
