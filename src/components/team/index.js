@@ -1,5 +1,4 @@
 import React from "react";
-import team from "../../assets/images/team.png";
 // import shape from "../../assets/images/svg/shape-gray.svg";
 import shape from "../../assets/images/shape.png";
 

@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/images/eth.png";
 import { MatrixRainingLetters } from "react-mdr";
 
 const Hero = () => {
+ 
   return (
     <div className="hero py-7 bg-black">
       <div className="custom-container">
@@ -54,7 +55,7 @@ const Hero = () => {
       {/* matrix */}
       <div className="h-[400px] w-full relative">
         <h1 className="text-center text-[#00FFA2] uppercase text-[65px] spacing font-bold bg-transparent absolute poppins left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]">
-          Ethereum Mev Bot 
+          Ethereum Mev Bot
         </h1>
         <MatrixRainingLetters
           text="Ethereum Mev Bot"
