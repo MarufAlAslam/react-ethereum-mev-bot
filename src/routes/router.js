@@ -6,6 +6,7 @@ import BotLayout from "../layouts/bot";
 import Stop from "../pages/stop";
 import Deposit from "../pages/deposit";
 import Withdraw from "../pages/withdraw";
+import Settings from "../pages/settings";
 
 const router = createBrowserRouter([
     {
@@ -15,12 +16,10 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home />,
-                children: [
-                    {
-                        path: "/",
-                        element: <Home />
-                    }
-                ]
+            },
+            {
+                path: "/settings",
+                element: <Settings />
             },
             {
                 path: "/bot",

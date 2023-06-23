@@ -73,3 +73,9 @@ html {
     top: 50%;
     transform: translateY(-50%);
 }
+
+
+.dexbtn.active, .stratBtn.active, .poolBtn.active, .cycleBtn.active{
+    border: 2px solid #589B74;
+    background-color: #0E1F17;
+}
