@@ -1,7 +1,5 @@
 import React from "react";
 import shape from "../../assets/images/svg/shape-gray.svg";
-import { FaArrowRight } from "react-icons/fa";
-import { Link } from "react-router-dom";
 
 const Withdraw = () => {
     return (
