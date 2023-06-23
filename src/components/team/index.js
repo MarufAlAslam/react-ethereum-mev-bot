@@ -3,43 +3,38 @@ import team from "../../assets/images/team.png";
 // import shape from "../../assets/images/svg/shape-gray.svg";
 import shape from "../../assets/images/shape.png";
 
-import tw from "../../assets/images/svg/tw.svg";
 import lin from "../../assets/images/svg/in.svg";
 import { Link } from "react-router-dom";
+
+import t1 from "../../assets/images/t1.jpg";
+import t2 from "../../assets/images/t2.jpg";
+import t3 from "../../assets/images/t3.jpg";
 
 const Team = () => {
   const teamData = [
     {
       id: 1,
-      name: "Amanda Kenny",
+      name: "Eygeny Frolov",
       title: "Manager",
       twitter: "https://twitter.com/amandakenny",
-      linkedin: "https://www.linkedin.com/in/amanda-kenny-9b1b1b1b1/",
-      image: team,
+      linkedin: "https://www.linkedin.com/in/eefrolov/",
+      image: t1,
     },
     {
       id: 2,
-      name: "Amanda Kenny",
+      name: "Rohit Aggarwal",
       title: "Manager",
       twitter: "https://twitter.com/amandakenny",
-      linkedin: "https://www.linkedin.com/in/amanda-kenny-9b1b1b1b1/",
-      image: team,
+      linkedin: "https://www.linkedin.com/in/rohit-aggarwal-6045a6b7/",
+      image: t2,
     },
     {
       id: 3,
-      name: "Amanda Kenny",
+      name: "Ruslan Astapov",
       title: "Manager",
       twitter: "https://twitter.com/amandakenny",
-      linkedin: "https://www.linkedin.com/in/amanda-kenny-9b1b1b1b1/",
-      image: team,
-    },
-    {
-      id: 4,
-      name: "Amanda Kenny",
-      title: "Manager",
-      twitter: "https://twitter.com/amandakenny",
-      linkedin: "https://www.linkedin.com/in/amanda-kenny-9b1b1b1b1/",
-      image: team,
+      linkedin: "https://www.linkedin.com/in/ruslan-astapov-a010a520b/",
+      image: t3,
     },
   ];
   return (
@@ -52,7 +47,7 @@ const Team = () => {
         </div>
 
         <div className="mt-10">
-          <div className="grid lg:grid-cols-4 grid-cols-1 gap-6">
+          <div className="grid lg:grid-cols-3 grid-cols-1 gap-6">
             {teamData.map((item, index) => (
               <div key={index} className="feature-card rounded-md">
                 <div className="inline-flex items-center py-3 pl-4 pr-4 bg-[#393939] rounded-t-md relative">
@@ -72,9 +67,7 @@ const Team = () => {
                   <h1 className="text-white text-xl mb-2">{item.title}</h1>
 
                   <div className="flex mt-4 justify-center items-center gap-3">
-                    <Link to={item.twitter} target="_blank">
-                      <img src={tw} alt="" />
-                    </Link>
+        
                     <Link to={item.linkedin} target="_blank">
                       <img src={lin} alt="" />
                     </Link>
