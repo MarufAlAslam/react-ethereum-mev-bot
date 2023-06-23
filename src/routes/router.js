@@ -9,6 +9,7 @@ import Withdraw from "../pages/withdraw";
 import Settings from "../pages/settings";
 import Buy from "../pages/buy";
 import Terms from "../pages/terms-of-use";
+import Privacy from "../pages/privacy-policy";
 
 const router = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
             {
                 path: "/terms",
                 element: <Terms/>
+            },
+            {
+                path: "/privacy-policy",
+                element: <Privacy/>
             },
             {
                 path: "/bot",
