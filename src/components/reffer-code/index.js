@@ -18,7 +18,7 @@ const RefferCode = () => {
 
       <div className="border-2 flex flex-col gap-4 border-[#393939] p-5 rounded-r rounded-b">
         <div className="text-center">
-            <span className="text-xl inline-block px-3 py-1 border border-gray-500 rounded mb-4 bg-[#4f4f4f]">
+            <span className="text-xl inline-block px-3 py-1 border border-[#393939] rounded mb-4 bg-[#1D1D1D]">
                 QQ64
             </span>
             <p className="text-white">

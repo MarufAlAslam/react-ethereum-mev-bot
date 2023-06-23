@@ -1,54 +1,71 @@
-body, html{
+body,
+html {
     overflow-x: hidden;
     background-color: black;
     color: white;
 }
 
-.custom-container{
+.custom-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
 }
 
-@media (min-width: 576px){
-    .custom-container{
+@media (min-width: 576px) {
+    .custom-container {
         max-width: 540px;
     }
 }
 
-@media (min-width: 768px){
-    .custom-container{
+@media (min-width: 768px) {
+    .custom-container {
         max-width: 720px;
     }
 }
 
-@media (min-width: 992px){
-    .custom-container{
+@media (min-width: 992px) {
+    .custom-container {
         max-width: 960px;
     }
 }
 
-@media (min-width: 1200px){
-    .custom-container{
+@media (min-width: 1200px) {
+    .custom-container {
         max-width: 1140px;
     }
 }
 
-@media (min-width: 1400px){
-    .custom-container{
+@media (min-width: 1400px) {
+    .custom-container {
         max-width: 1320px;
     }
 }
 
-@media (min-width: 1600px){
-    .custom-container{
+@media (min-width: 1600px) {
+    .custom-container {
         max-width: 1500px;
     }
 }
 
-.spacing{
+.spacing {
     letter-spacing: 5px;
 }
-.tab-btn.active{
+
+.tab-btn.active {
     background-color: #1D1D1D;
+}
+
+.ls-2 {
+    letter-spacing: 2px;
+}
+
+.devider::before {
+    content: '';
+    width: 100%;
+    border-bottom: 1px solid #707070;
+    background: #707070;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }

@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import Manage from "../components/manage";
 import Activity from "../components/activity";
 import RefferCode from "../components/reffer-code";
+import Subscription from "../components/subscription";
 
 const BotLayout = () => {
   const manageData = [
@@ -104,7 +105,7 @@ const BotLayout = () => {
             <Outlet />
           </div>
           <div className="w-3/12">
-            <RefferCode />
+            <Subscription />
             <div className="mt-12">
               <RefferCode />
             </div>
