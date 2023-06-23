@@ -4,6 +4,7 @@ import Manage from "../components/manage";
 import Activity from "../components/activity";
 import RefferCode from "../components/reffer-code";
 import Subscription from "../components/subscription";
+import BotActivity from "../components/bot-activity";
 
 const BotLayout = () => {
   const manageData = [
@@ -103,6 +104,9 @@ const BotLayout = () => {
           </div>
           <div className="w-6/12">
             <Outlet />
+            <div className="mt-12">
+              <BotActivity />
+            </div>
           </div>
           <div className="w-3/12">
             <Subscription />
