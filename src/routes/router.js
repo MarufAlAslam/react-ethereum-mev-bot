@@ -7,6 +7,7 @@ import Stop from "../pages/stop";
 import Deposit from "../pages/deposit";
 import Withdraw from "../pages/withdraw";
 import Settings from "../pages/settings";
+import Buy from "../pages/buy";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
             {
                 path: "/settings",
                 element: <Settings />
+            },
+            {
+                path: "/buy",
+                element: <Buy/>
             },
             {
                 path: "/bot",
