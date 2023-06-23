@@ -1,9 +1,10 @@
 import React from 'react'
+import Start from '../../components/start'
 
 const BotHome = () => {
     return (
         <div>
-            Hello from BotHome
+            <Start/>
         </div>
     )
 }

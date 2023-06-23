@@ -68,7 +68,7 @@ const BotLayout = () => {
         </svg>
       ),
       title: "Start Bot",
-      link: "/bot/depostit",
+      link: "/bot",
     },
     {
       id: 4,
@@ -89,7 +89,7 @@ const BotLayout = () => {
         </svg>
       ),
       title: "Stop Bot",
-      link: "/bot/depostit",
+      link: "/bot/stop",
     },
   ];
   return (

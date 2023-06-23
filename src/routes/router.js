@@ -3,6 +3,7 @@ import Home from "../pages/home";
 import MainLayout from "../layouts/main";
 import BotHome from "../pages/bot-home";
 import BotLayout from "../layouts/bot";
+import Stop from "../pages/stop";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
                     {
                         path: "/bot",
                         element: <BotHome />
+                    },
+                    {
+                        path: "/bot/stop",
+                        element: <Stop />
                     }
                 ]
             }
