@@ -1,9 +1,24 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/images/eth.png";
 import Rain from "../rain";
+import { Dropdown } from "antd";
 
 const Hero = () => {
+  const items = [
+    {
+      key: "1",
+      label: <Link to={"/"}>Home</Link>,
+    },
+    {
+      key: "2",
+      label: <Link to={"/"}>Documentation</Link>,
+    },
+    {
+      key: "3",
+      label: <Link to={"/"}>Connect Wallet</Link>,
+    },
+  ];
   return (
     <div className="hero py-7 bg-black">
       <div className="custom-container">
@@ -29,7 +44,7 @@ const Hero = () => {
             </NavLink>
             <div className="text-center flex justify-end items-center ">
               <div className="md:bg-[#242424] flex rounded items-center">
-                <div className="icon-holder p-3 md:bg-[#0E1F17] border-2 border-[#589B74] rounded">
+                <div className="icon-holder p-3 px-4 md:bg-[#0E1F17] border-2 border-[#589B74] rounded">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="27.818"
@@ -49,42 +64,49 @@ const Hero = () => {
                 <button className="text-white px-4 py-2 rounded-md md:block hidden">
                   Connect Wallet
                 </button>
-                <button className="text-white ml-4 px-4 py-2 md:hidden block icon-holder p-3 md:bg-[#0E1F17] border-2 border-[#589B74] rounded">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20.343"
-                    height="28.622"
-                    viewBox="0 0 24.343 21.622"
-                  >
-                    <g
-                      id="Group_163012"
-                      data-name="Group 163012"
-                      transform="translate(-307.192 -93)"
+                <Dropdown
+                  menu={{
+                    items,
+                  }}
+                  placement="bottomRight"
+                >
+                  <button className="text-white ml-4 px-4 py-2 md:hidden block icon-holder p-3 md:bg-[#0E1F17] border-2 border-[#589B74] rounded">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20.343"
+                      height="28.622"
+                      viewBox="0 0 24.343 21.622"
                     >
-                      <path
-                        id="Caminho_1848"
-                        data-name="Caminho 1848"
-                        d="M22.1,64.267H2.239a1.845,1.845,0,1,0,0,3.6H22.1a1.845,1.845,0,1,0,0-3.6Z"
-                        transform="translate(307.193 28.733)"
-                        fill="#fff"
-                      />
-                      <path
-                        id="Caminho_1849"
-                        data-name="Caminho 1849"
-                        d="M22.1,208.867H2.239a1.845,1.845,0,1,0,0,3.6H22.1a1.845,1.845,0,1,0,0-3.6Z"
-                        transform="translate(307.193 -106.858)"
-                        fill="#fff"
-                      />
-                      <path
-                        id="Caminho_1850"
-                        data-name="Caminho 1850"
-                        d="M22.1,353.467H2.239a1.845,1.845,0,1,0,0,3.6H22.1a1.845,1.845,0,1,0,0-3.6Z"
-                        transform="translate(307.193 -242.449)"
-                        fill="#fff"
-                      />
-                    </g>
-                  </svg>
-                </button>
+                      <g
+                        id="Group_163012"
+                        data-name="Group 163012"
+                        transform="translate(-307.192 -93)"
+                      >
+                        <path
+                          id="Caminho_1848"
+                          data-name="Caminho 1848"
+                          d="M22.1,64.267H2.239a1.845,1.845,0,1,0,0,3.6H22.1a1.845,1.845,0,1,0,0-3.6Z"
+                          transform="translate(307.193 28.733)"
+                          fill="#fff"
+                        />
+                        <path
+                          id="Caminho_1849"
+                          data-name="Caminho 1849"
+                          d="M22.1,208.867H2.239a1.845,1.845,0,1,0,0,3.6H22.1a1.845,1.845,0,1,0,0-3.6Z"
+                          transform="translate(307.193 -106.858)"
+                          fill="#fff"
+                        />
+                        <path
+                          id="Caminho_1850"
+                          data-name="Caminho 1850"
+                          d="M22.1,353.467H2.239a1.845,1.845,0,1,0,0,3.6H22.1a1.845,1.845,0,1,0,0-3.6Z"
+                          transform="translate(307.193 -242.449)"
+                          fill="#fff"
+                        />
+                      </g>
+                    </svg>
+                  </button>
+                </Dropdown>
               </div>
             </div>
           </div>
