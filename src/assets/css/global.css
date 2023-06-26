@@ -88,4 +88,7 @@ html {
     .lh-1{
         line-height: 1;
     }
+    svg.mr-3.shape {
+        min-width: 40px;
+    }
 }

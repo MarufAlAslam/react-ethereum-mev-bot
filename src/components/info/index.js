@@ -12,7 +12,7 @@ const Info = () => {
   return (
     <div className="info py-6">
       <div className="custom-container">
-        <div className="border border-[#393939] rounded-md flex items-center overflow-hidden">
+        <div className="border border-[#393939] rounded-md flex md:flex-row flex-col md:tems-center overflow-hidden">
           <button className="text-white p-4 tab-btn active rounded border-r border-[#393939]">
             Mempool Invader
           </button>
@@ -278,7 +278,7 @@ const Info = () => {
               </g>
             </svg>
           </button>
-          <button className="text-white py-2 tab-btn rounded">
+          <button className="text-white py-2 tab-btn rounded md:ml-0 ml-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="108.781"
@@ -345,7 +345,7 @@ const Info = () => {
                   width="40"
                   height="40"
                   viewBox="0 0 66 66"
-                  className="mr-3"
+                  className="mr-3 shape"
                 >
                   <g
                     id="Group_16220"
