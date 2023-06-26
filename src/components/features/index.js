@@ -55,9 +55,9 @@ const Features = () => {
     },
     {
       id: 8,
-      title: "Open Source",
+      title: "Easy to Use",
       img: icon8,
-      desc: "User Friendly and Intuative interface",
+      desc: "User Friendly and Intutive interface",
     },
   ];
   return (
@@ -85,7 +85,7 @@ const Features = () => {
                   />
                 </div>
 
-                <div className="card-body bg-[#0E1F17] border-2 border-[#589B74] rounded-r-md rounded-b-md p-6">
+                <div className="card-body bg-[#0E1F17] border-2 border-[#589B74] rounded-r-md rounded-b-md p-6 min-h-[170px]">
                   <p className="text-white text-base">{item.desc}</p>
                 </div>
               </div>

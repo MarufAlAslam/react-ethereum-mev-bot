@@ -31,7 +31,7 @@ const Deposit = () => {
                     <input type="text" placeholder="0 ETH..." className="border-2 text-lg w-full bg-[#0E1F17] border-[#589B74] placeholder:text-white px-5 py-2 rounded-md p-2" />
 
                     <p className="mt-2 mb-5 text-[#3BDC7E] text-center text-lg">
-                        Minimum deposit 0.05 ETH
+                        Minimum deposit 0.5 ETH
                     </p>
 
                     <button className="btn py-3 btn-green flex w-full justify-between items-center border-2 border-[#589B74] bg-[#0E1F17] rounded-md px-4">

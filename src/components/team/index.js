@@ -14,7 +14,7 @@ const Team = () => {
     {
       id: 1,
       name: "Eygeny Frolov",
-      title: "Manager",
+      title: "Data Scientist",
       twitter: "https://twitter.com/amandakenny",
       linkedin: "https://www.linkedin.com/in/eefrolov/",
       image: t1,
@@ -22,7 +22,7 @@ const Team = () => {
     {
       id: 2,
       name: "Rohit Aggarwal",
-      title: "Manager",
+      title: "Ethereum Developer",
       twitter: "https://twitter.com/amandakenny",
       linkedin: "https://www.linkedin.com/in/rohit-aggarwal-6045a6b7/",
       image: t2,
@@ -30,7 +30,7 @@ const Team = () => {
     {
       id: 3,
       name: "Ruslan Astapov",
-      title: "Manager",
+      title: "Full Stack Developer",
       twitter: "https://twitter.com/amandakenny",
       linkedin: "https://www.linkedin.com/in/ruslan-astapov-a010a520b/",
       image: t3,

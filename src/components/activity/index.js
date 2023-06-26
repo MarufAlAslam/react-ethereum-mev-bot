@@ -4,7 +4,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 const Activity = () => {
   const activityData = [
-    "Depositted 5ETH",
+    "Deposited 5ETH",
     "Started the BOT",
     "Stopped the BOT",
   ];

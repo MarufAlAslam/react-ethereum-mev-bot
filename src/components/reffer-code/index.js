@@ -22,13 +22,21 @@ const RefferCode = () => {
             QQ64
           </span>
           <p className="text-white">
-            Reffer your friends and You make an extra 5% on their points.
+            Refer your friends and You make an extra 5% on their profits.
           </p>
 
           <div className="mt-5">
-            <button className="btn text-center btn-green flex w-auto mx-auto justify-center items-center border-2 border-[#589B74] bg-[#0E1F17] rounded-md px-4 py-2">
-              Go
-            </button>
+            <form className="flex gap-2 justify-between items-center">
+              <input
+                type="text"
+                className="border-2 border-[#589B74] bg-[#0E1F17] rounded-md px-4 py-2 w-full"
+                placeholder="Referral ID"
+              />
+
+              <button className="btn text-center btn-green flex w-auto mx-auto justify-center items-center border-2 border-[#589B74] bg-[#0E1F17] rounded-md px-4 py-2">
+                Go
+              </button>
+            </form>
           </div>
         </div>
       </div>

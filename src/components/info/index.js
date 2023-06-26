@@ -336,7 +336,7 @@ const Info = () => {
         </div>
 
         {/* columns */}
-        <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 mt-12">
+        <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 mt-12 md:w-4/5 mx-auto">
           {
             bodyData.map((item, index) => (
               <div className="flex justify-start items-start">

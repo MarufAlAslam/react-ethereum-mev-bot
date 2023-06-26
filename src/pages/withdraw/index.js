@@ -30,11 +30,8 @@ const Withdraw = () => {
                 <form className="md:w-[60%] mx-auto mb-6">
                     <input type="text" placeholder="0 ETH..." className="border-2 text-lg w-full bg-[#0E1F17] border-[#589B74] placeholder:text-white px-5 py-2 rounded-md p-2" />
 
-                    <p className="mt-2 mb-5 text-[#3BDC7E] text-center text-lg">
-                        Minimum Withdraw 0.05 ETH
-                    </p>
 
-                    <button className="btn py-3 btn-green flex w-full justify-between items-center border-2 border-[#589B74] bg-[#0E1F17] rounded-md px-4">
+                    <button className="btn mt-4 py-3 btn-green flex w-full justify-between items-center border-2 border-[#589B74] bg-[#0E1F17] rounded-md px-4">
                         <div className="flex justify-start items-center gap-3">
                             <svg xmlns="http://www.w3.org/2000/svg" width="28.812" height="23.957" viewBox="0 0 28.812 23.957">
                                 <path id="path0" d="M11.562,23.831a.856.856,0,0,0,.373-.373l.13-.244V17.971l.66-.038A17.11,17.11,0,0,0,28.712,2.8C28.967.628,28.751-.055,27.833,0c-.405.026-.572.139-.826.559-3.194,5.269-7.789,7.781-14.254,7.791h-.688V5.728c0-3.176-.028-3.29-.825-3.366-.482-.047-.415-.109-5.771,5.089C-.521,13.254-.1,12.786.09,13.511c.052.194,10.372,10.209,10.657,10.345a.807.807,0,0,0,.817-.022" transform="translate(28.812 23.957) rotate(180)" fill="#fff" fill-rule="evenodd" />

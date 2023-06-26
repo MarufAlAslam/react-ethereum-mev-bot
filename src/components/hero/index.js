@@ -114,7 +114,7 @@ const Hero = () => {
         {/* topbar */}
       </div>
       {/* matrix */}
-      <div className="h-[400px] w-full relative">
+      <div className="h-[200px] w-full relative">
         <h1 className="text-center text-[#00FFA2] uppercase md:text-[65px] text-[50px] spacing font-bold bg-transparent absolute poppins left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] lh-1">
           Ethereum Mev Bot
         </h1>

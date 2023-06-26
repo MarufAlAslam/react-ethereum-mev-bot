@@ -51,9 +51,6 @@ const Subscription = () => {
                     </span>
                 </div>
 
-                <p className="text-white text-lg text-center ls-2 mt-4">
-                    Your Free Trial ends in
-                </p>
 
                 <Link to={'/subscription'} className="btn btn-green flex w-full justify-between items-center border-2 border-[#589B74] bg-[#0E1F17] rounded-md px-4 py-2">
                     <div className="flex justify-start items-center gap-3">

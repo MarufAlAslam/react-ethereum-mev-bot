@@ -5,7 +5,7 @@ const Buy = () => {
     const packages = [
         {
             id: 1,
-            name: "Montly",
+            name: "6 Months",
             popular: false,
             price: 5,
             plan: "per month",
@@ -53,9 +53,7 @@ const Buy = () => {
                                         <h2 className='text-3xl'>
                                             {pack.price} ETH
                                         </h2>
-                                        <p className='text-[#707070]'>
-                                            /{pack.plan}
-                                        </p>
+                                        
                                     </div>
                                 </div>
 
