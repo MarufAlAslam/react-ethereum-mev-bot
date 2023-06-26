@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/images/eth.png";
-import { MatrixRainingLetters } from "react-mdr";
+import Rain from "../rain";
 
 const Hero = () => {
- 
   return (
     <div className="hero py-7 bg-black">
       <div className="custom-container">
@@ -19,7 +18,10 @@ const Hero = () => {
                 Documentation
               </NavLink>
             </div>
-            <NavLink to={'/'} className="text-center flex justify-center items-center">
+            <NavLink
+              to={"/"}
+              className="text-center flex justify-center items-center"
+            >
               <img src={logo} alt="logo" className="mr-3" />
               <h1 className="text-white text-2xl font-bold uppercase logo">
                 Mev Bot
@@ -57,10 +59,9 @@ const Hero = () => {
         <h1 className="text-center text-[#00FFA2] uppercase text-[65px] spacing font-bold bg-transparent absolute poppins left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]">
           Ethereum Mev Bot
         </h1>
-        <MatrixRainingLetters
-          text="Ethereum Mev Bot"
-          custom_class="mt-10 p-0 w-full h-[400px] object-cover object-bottom"
-        />
+
+        <Rain />
+        {/* create custom matrix digital rain */}
       </div>
       {/* matrix */}
     </div>
