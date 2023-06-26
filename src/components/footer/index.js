@@ -8,9 +8,9 @@ const Footer = () => {
     <div className="pb-4 pt-10">
       <div className="custom-container">
         <section>
-          <div className="grid grid-cols-3 gap-2">
-            <div className="flex items-center gap-[55px]">
-              <div className="flex justify-start items-center gap-3">
+          <div className="grid md:grid-cols-3 gap-2">
+            <div className="flex items-center gap-[55px] md:w-auto w-full md:justi justify-center">
+              <div className="flex md:justify-start justify-center items-center gap-3">
                 <Link to="/terms" className="text-white p-1 text-lg">
                   Terms of Use
                 </Link>
@@ -25,7 +25,7 @@ const Footer = () => {
                 Mev Bot
               </h1>
             </div>
-            <div className="text-center flex justify-end items-center ">
+            <div className="text-center flex md:justify-end justify-center items-center ">
               <div className="flex rounded items-center gap-2">
                 <Link to="/" className="text-white p-1 bg-[#0E1F17] border-2 border-[#589B74] rounded w-[35px] h-[35px] flex justify-center items-center">
                   <FaTwitter/>
