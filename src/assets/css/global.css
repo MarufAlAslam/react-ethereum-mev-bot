@@ -79,3 +79,13 @@ html {
     border: 2px solid #589B74;
     background-color: #0E1F17;
 }
+
+@media screen and (max-width: 767px){
+    .mobile-icon{
+        width: 20px;
+        height: 20px;
+    }
+    .lh-1{
+        line-height: 1;
+    }
+}

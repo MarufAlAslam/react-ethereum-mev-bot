@@ -9,8 +9,8 @@ const Hero = () => {
       <div className="custom-container">
         {/* topbar */}
         <section>
-          <div className="grid grid-cols-3 gap-2">
-            <div className="flex items-center gap-[55px]">
+          <div className="grid md:grid-cols-3 grid-cols-2 gap-2">
+            <div className="md:flex items-center gap-[55px] hidden">
               <NavLink to="/bot" className="text-lg text-white">
                 Home
               </NavLink>
@@ -20,21 +20,22 @@ const Hero = () => {
             </div>
             <NavLink
               to={"/"}
-              className="text-center flex justify-center items-center"
+              className="text-center flex md:justify-center items-center"
             >
-              <img src={logo} alt="logo" className="mr-3" />
-              <h1 className="text-white text-2xl font-bold uppercase logo">
+              <img src={logo} alt="logo" className="mr-3 md:w-auto w-[20px]" />
+              <h1 className="text-white md:text-2xl text-lg font-bold uppercase logo">
                 Mev Bot
               </h1>
             </NavLink>
             <div className="text-center flex justify-end items-center ">
-              <div className="bg-[#242424] flex rounded items-center">
-                <div className="icon-holder p-3 bg-[#0E1F17] border-2 border-[#589B74] rounded">
+              <div className="md:bg-[#242424] flex rounded items-center">
+                <div className="icon-holder p-3 md:bg-[#0E1F17] border-2 border-[#589B74] rounded">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="27.818"
                     height="22.977"
                     viewBox="0 0 27.818 22.977"
+                    className="mobile-icon"
                   >
                     <path
                       id="path0"
@@ -45,8 +46,44 @@ const Hero = () => {
                     />
                   </svg>
                 </div>
-                <button className="text-white px-4 py-2 rounded-md">
+                <button className="text-white px-4 py-2 rounded-md md:block hidden">
                   Connect Wallet
+                </button>
+                <button className="text-white ml-4 px-4 py-2 md:hidden block icon-holder p-3 md:bg-[#0E1F17] border-2 border-[#589B74] rounded">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20.343"
+                    height="28.622"
+                    viewBox="0 0 24.343 21.622"
+                  >
+                    <g
+                      id="Group_163012"
+                      data-name="Group 163012"
+                      transform="translate(-307.192 -93)"
+                    >
+                      <path
+                        id="Caminho_1848"
+                        data-name="Caminho 1848"
+                        d="M22.1,64.267H2.239a1.845,1.845,0,1,0,0,3.6H22.1a1.845,1.845,0,1,0,0-3.6Z"
+                        transform="translate(307.193 28.733)"
+                        fill="#fff"
+                      />
+                      <path
+                        id="Caminho_1849"
+                        data-name="Caminho 1849"
+                        d="M22.1,208.867H2.239a1.845,1.845,0,1,0,0,3.6H22.1a1.845,1.845,0,1,0,0-3.6Z"
+                        transform="translate(307.193 -106.858)"
+                        fill="#fff"
+                      />
+                      <path
+                        id="Caminho_1850"
+                        data-name="Caminho 1850"
+                        d="M22.1,353.467H2.239a1.845,1.845,0,1,0,0,3.6H22.1a1.845,1.845,0,1,0,0-3.6Z"
+                        transform="translate(307.193 -242.449)"
+                        fill="#fff"
+                      />
+                    </g>
+                  </svg>
                 </button>
               </div>
             </div>
@@ -56,7 +93,7 @@ const Hero = () => {
       </div>
       {/* matrix */}
       <div className="h-[400px] w-full relative">
-        <h1 className="text-center text-[#00FFA2] uppercase text-[65px] spacing font-bold bg-transparent absolute poppins left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]">
+        <h1 className="text-center text-[#00FFA2] uppercase md:text-[65px] text-[50px] spacing font-bold bg-transparent absolute poppins left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] lh-1">
           Ethereum Mev Bot
         </h1>
 
