@@ -95,20 +95,20 @@ const BotLayout = () => {
   return (
     <div className="py-8">
       <div className="custom-container">
-        <div className="flex gap-10 justify-between items-start">
-          <div className="w-3/12">
+        <div className="flex md:flex-row flex-col gap-10 justify-between items-start w-full">
+          <div className="md:w-3/12 w-full">
             <Manage manageData={manageData} />
             <div className="mt-12">
               <Activity />
             </div>
           </div>
-          <div className="w-6/12">
+          <div className="md:w-6/12 w-full">
             <Outlet />
             <div className="mt-12">
               <BotActivity />
             </div>
           </div>
-          <div className="w-3/12">
+          <div className="md:w-3/12 w-full">
             <Subscription />
             <div className="mt-12">
               <RefferCode />
