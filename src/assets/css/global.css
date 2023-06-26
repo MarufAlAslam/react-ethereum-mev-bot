@@ -91,4 +91,11 @@ html {
     svg.mr-3.shape {
         min-width: 40px;
     }
+    .tab-btn{
+        width: 100%;
+    }
+    .sv{
+        margin-top: 10px;
+        width: 100%;
+    }
 }

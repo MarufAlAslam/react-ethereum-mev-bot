@@ -34,7 +34,7 @@ const Settings = () => {
                         Choose Dex
                     </button>
                 </div>
-                <div className='flex mt-4 justify-start items-center gap-4'>
+                <div className='flex md:flex-row flex-col mt-4 justify-start items-center gap-4'>
                     <button onClick={dexbtnactive} className='text-white dexbtn active p-4 tab-btn rounded border border-[#393939]'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="212.701" height="26" viewBox="0 0 212.701 38">
                             <g id="Group_16217" data-name="Group 16217" transform="translate(0)">
@@ -115,7 +115,7 @@ const Settings = () => {
                         Capital Stategy
                     </button>
                 </div>
-                <div className='flex mt-4 justify-start items-center gap-4'>
+                <div className='flex md:flex-row flex-col mt-4 justify-start items-center gap-4'>
                     <button onClick={stratBtnActive} className='text-white stratBtn active p-4 tab-btn rounded border border-[#393939]'>
                         Limited
                     </button>
@@ -131,7 +131,7 @@ const Settings = () => {
                         Liquidity Pool Age
                     </button>
                 </div>
-                <div className='flex mt-4 justify-start items-center gap-4'>
+                <div className='flex md:flex-row flex-col mt-4 justify-start items-center gap-4'>
                     <button onClick={poolBtnActive} className='text-white poolBtn active p-4 tab-btn rounded border border-[#393939]'>
                         Over 1 Year
                     </button>
@@ -153,7 +153,7 @@ const Settings = () => {
                         Bot Work Cycle
                     </button>
                 </div>
-                <div className='flex mt-4 justify-start items-center gap-4'>
+                <div className='flex md:flex-row flex-col mt-4 justify-start items-center gap-4'>
                     <button onClick={cycleBtnActive} className='text-white cycleBtn active p-4 tab-btn rounded border border-[#393939]'>
                         6 hours
                     </button>
@@ -170,17 +170,17 @@ const Settings = () => {
 
 
 
-                <div className="mt-28 flex justify-between items-center">
-                    <div className='flex justify-start items-center gap-4'>
+                <div className="mt-28 flex md:flex-row flex-col justify-between items-center">
+                    <div className='flex md:flex-row flex-col justify-start items-center md:gap-4 md:w-auto w-full'>
                         <button className="text-white p-4 tab-btn active rounded border border-[#393939]">
                             <Switch className='mr-2' />  Exclude Deflationary Tokens
                         </button>
 
-                        <button className='flex py-4 px-6 rounded justify-between items-center gap-4 bg-[#0E1F17] border border-[#589B74]'>
+                        <button className='flex py-4 px-6 sv rounded justify-between items-center gap-4 bg-[#0E1F17] border border-[#589B74]'>
                             Save <FaArrowRight />
                         </button>
                     </div>
-                    <button className='flex py-4 px-6 rounded justify-between items-center gap-4 bg-[#0E1F17] border border-[#589B74]'>
+                    <button className='flex py-4 px-6 rounded justify-between items-center sv gap-4 bg-[#0E1F17] border border-[#589B74]'>
                        <FaCog/> Default Settings
                     </button>
                 </div>
