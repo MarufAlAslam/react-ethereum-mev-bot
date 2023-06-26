@@ -61,12 +61,17 @@ const Team = () => {
                   />
                 </div>
 
-                <div className="card-body text-center bg-[#1D1D1D] border-2 border-[#393939] rounded-r-md rounded-b-md p-8">
-                  <img src={item.image} alt="" className="block mx-auto mb-4" />
+                <div className="card-body text-center bg-[#1D1D1D] border-2 border-[#393939] agargao-[#4C775D] rounded-r-md rounded-b-md p-8">
+                  <div className="inline-block mx-auto border-4 rounded-full border-[#4C775D] mb-4">
+                    <img
+                      src={item.image}
+                      alt=""
+                      className="block mx-auto w-[100px] h-[100px] object-cover object-top rounded-full border-4 border-transparent"
+                    />
+                  </div>
                   <h1 className="text-white text-xl mb-2">{item.title}</h1>
 
                   <div className="flex mt-4 justify-center items-center gap-3">
-        
                     <Link to={item.linkedin} target="_blank">
                       <img src={lin} alt="" />
                     </Link>
