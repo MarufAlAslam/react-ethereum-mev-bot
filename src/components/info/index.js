@@ -4,9 +4,9 @@ const Info = () => {
   const bodyData = [
     "2-15% profit for each workig cycle of the bot",
     "Easy to use",
-    "An inhanced automatic algorithm, allows you to earn profits 24 hours ",
+    "An enhanced automatic algorithm, allows you to earn profits 24 hours ",
     "Professional Technical Support",
-    "User Friendly and Intuative Interface",
+    "User Friendly and intuitive Interface",
     "Free Trial Available"
   ]
   return (

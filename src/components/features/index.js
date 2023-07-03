@@ -21,7 +21,7 @@ const Features = () => {
       id: 2,
       title: "No Risk",
       img: icon2,
-      desc: "The probability of loosing money is fantastically low",
+      desc: "The probability of losing money is fantastically low",
     },
     {
       id: 3,
@@ -57,7 +57,7 @@ const Features = () => {
       id: 8,
       title: "Easy to Use",
       img: icon8,
-      desc: "User Friendly and Intutive interface",
+      desc: "User Friendly and intuitive interface",
     },
   ];
   return (
