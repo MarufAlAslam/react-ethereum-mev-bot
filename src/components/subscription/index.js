@@ -3,10 +3,11 @@ import shape from "../../assets/images/svg/shape-gray.svg";
 import Buy from "../../pages/buy";
 import { useState } from "react";
 
-import {GrClose} from 'react-icons/gr'
+// import { GrClose } from "react-icons/gr";
+import { IoCloseSharp } from "react-icons/io5";
 
 const Subscription = () => {
-    const [showBuy, setShowBuy] = useState(false);
+  const [showBuy, setShowBuy] = useState(false);
   return (
     <div className="feature-card rounded-md">
       <div className="inline-flex items-center py-3 pl-4 pr-4 bg-[#393939] rounded-t-md relative">
@@ -90,18 +91,19 @@ const Subscription = () => {
       </div>
 
       {showBuy && (
-      <div className="fixed z-50 bg-[#ffffffcc] w-full h-screen top-0 left-0 flex justify-center items-center ">
-        <div className="text-right absolute z-[100] top-5 bg-red-500 h-[60px] w-[60px] flex justify-center items-center rounded-full right-5 cursor-pointer" onClick={() => setShowBuy(false)}>
-          <button
-            className="text-red-900 px-4 py-2 rounded-md md:block hidden"
+        <div className="fixed z-50 bg-[#ffffffcc] w-full h-screen top-0 left-0 flex justify-center items-center ">
+          <div
+            className="text-right absolute z-[100] top-5 bg-[#589b74] h-[60px] w-[60px] flex justify-center items-center rounded-full right-5 cursor-pointer"
+            onClick={() => setShowBuy(false)}
           >
-            <GrClose/>
-          </button>
+            <button className="text-white px-4 py-2 rounded-md md:block hidden">
+              <IoCloseSharp className="text-white text-4xl" />
+            </button>
+          </div>
+          <div className="bg-black p-4 w-[65%] h-[80vh] rounded overflow-y-auto">
+            <Buy />
+          </div>
         </div>
-        <div className="bg-black p-4 w-[65%] h-[80vh] rounded overflow-y-auto">
-          <Buy />
-        </div>
-      </div>
       )}
     </div>
   );

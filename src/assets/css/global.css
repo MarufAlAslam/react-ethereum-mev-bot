@@ -85,6 +85,27 @@ svg.mr-3.shape {
   min-width: 40px;
 }
 
+.dex1{
+  background-image: url("../images/svg/dex1.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.dex2{
+  background-image: url("../images/svg/dex2.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.dex3{
+  background-image: url("../images/svg/dex3.svg");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+}
+
 @media screen and (max-width: 767px) {
   .mobile-icon {
     width: 20px;
