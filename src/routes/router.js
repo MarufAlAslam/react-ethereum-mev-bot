@@ -36,27 +36,28 @@ const router = createBrowserRouter([
                 path: "/privacy-policy",
                 element: <Privacy/>
             },
+           
+        ]
+    },
+    {
+        path: "/bot",
+        element: <BotLayout />,
+        children: [
             {
                 path: "/bot",
-                element: <BotLayout />,
-                children: [
-                    {
-                        path: "/bot",
-                        element: <BotHome />
-                    },
-                    {
-                        path: "/bot/stop",
-                        element: <Stop />
-                    },
-                    {
-                        path: "/bot/deposit",
-                        element: <Deposit />
-                    },
-                    {
-                        path: "/bot/withdraw",
-                        element: <Withdraw />
-                    }
-                ]
+                element: <BotHome />
+            },
+            {
+                path: "/bot/stop",
+                element: <Stop />
+            },
+            {
+                path: "/bot/deposit",
+                element: <Deposit />
+            },
+            {
+                path: "/bot/withdraw",
+                element: <Withdraw />
             }
         ]
     }
