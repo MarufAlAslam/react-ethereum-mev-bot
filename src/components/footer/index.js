@@ -27,10 +27,10 @@ const Footer = () => {
             </div>
             <div className="text-center flex md:justify-end justify-center items-center ">
               <div className="flex rounded items-center gap-2">
-                <Link to="https://twitter.com/MevbotOnline" className="text-white p-1 bg-[#0E1F17] border-2 border-[#589B74] rounded w-[35px] h-[35px] flex justify-center items-center">
+                <Link target="_blank" to="https://twitter.com/MevbotOnline" className="text-white p-1 bg-[#0E1F17] border-2 border-[#589B74] rounded w-[35px] h-[35px] flex justify-center items-center">
                   <FaTwitter/>
                 </Link>
-                <Link to="https://t.me/mevbotadmin" className="text-white p-1 bg-[#0E1F17] border-2 border-[#589B74] rounded w-[35px] h-[35px] flex justify-center items-center">
+                <Link target="_blank" to="https://t.me/mevbotadmin" className="text-white p-1 bg-[#0E1F17] border-2 border-[#589B74] rounded w-[35px] h-[35px] flex justify-center items-center">
                   <FaTelegram/>
                 </Link>
                 

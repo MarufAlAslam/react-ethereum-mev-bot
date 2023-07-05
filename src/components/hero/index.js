@@ -1,13 +1,19 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/images/eth.png";
 import Rain from "../rain";
 import { Dropdown } from "antd";
 import SettingsModal from "../settingsModal";
 
+import Web3 from "web3";
+import { useEffect } from "react";
+
 const Hero = () => {
   const [isConnected, setIsConnected] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
+  const [web3, setWeb3] = useState(null);
+  const navigator = useNavigate();
+  const [wallet, setWallet] = useState(null);
   const items = [
     {
       key: "1",
@@ -15,7 +21,14 @@ const Hero = () => {
     },
     {
       key: "2",
-      label: <Link to={"/"}>Documentation</Link>,
+      label: (
+        <Link
+          target="_blank"
+          to={"https://app.gitbook.com/s/crOtyWgVQIVIdbrLBJMw"}
+        >
+          Documentation
+        </Link>
+      ),
     },
     {
       key: "3",
@@ -23,9 +36,46 @@ const Hero = () => {
     },
   ];
 
-  const connectWallet = () => {
-    setIsConnected(true);
+  const handleConnectWallet = async () => {
+    const initWeb3 = async () => {
+      if (window.ethereum) {
+        const web3Instance = new Web3(window.ethereum);
+        await window.ethereum.enable(); // Request user permission
+        setWeb3(web3Instance);
+
+        // check if connected
+        const accounts = await web3Instance.eth.getAccounts();
+        if (accounts.length > 0) {
+          setIsConnected(true);
+          localStorage.setItem("wallet", accounts[0]);
+
+          // get wallet balance
+          const balance = await web3Instance.eth.getBalance(accounts[0]);
+          console.log(balance);
+          setWallet(accounts[0]);
+          console.log(accounts);
+        } else {
+          alert("Please connect your wallet");
+          setIsConnected(false);
+        }
+      }
+    };
+
+    initWeb3();
   };
+
+  useEffect(() => {
+    const wallet = localStorage.getItem("wallet");
+    if (wallet) {
+      // navigator("/bot");
+      setIsConnected(true);
+      setWallet(wallet);
+    }
+  }, []);
+
+  // const connectWallet = () => {
+  //   setIsConnected(true);
+  // };
   return (
     <div className="hero py-7 bg-black">
       <div className="custom-container">
@@ -36,7 +86,10 @@ const Hero = () => {
               <NavLink to="/bot" className="text-lg text-white">
                 Home
               </NavLink>
-              <NavLink to="/docs" className="text-lg text-white">
+              <NavLink
+                target="_blank"
+                to={"https://app.gitbook.com/s/crOtyWgVQIVIdbrLBJMw"}
+              >
                 Documentation
               </NavLink>
             </div>
@@ -72,9 +125,9 @@ const Hero = () => {
                     </div>
                     <button
                       className="text-white px-4 py-2 rounded-md md:block hidden"
-                      onClick={connectWallet}
+                      onClick={handleConnectWallet}
                     >
-                      Wallet: 120355699daea
+                      Wallet: {wallet.slice(0, 6)}...{wallet.slice(-4)}
                     </button>
                     <Dropdown
                       menu={{
@@ -159,7 +212,7 @@ const Hero = () => {
                   </div>
                   <button
                     className="text-white px-4 py-2 rounded-md md:block hidden"
-                    onClick={connectWallet}
+                    onClick={handleConnectWallet}
                   >
                     Connect Wallet
                   </button>
@@ -225,9 +278,7 @@ const Hero = () => {
       {/* matrix */}
 
       {/* settings popup */}
-      {showSettings && (
-        <SettingsModal setShowSettings={setShowSettings} />
-      )}
+      {showSettings && <SettingsModal setShowSettings={setShowSettings} />}
     </div>
   );
 };

@@ -4,28 +4,37 @@ import logo from "../../assets/images/eth.png";
 import Rain from "../rain";
 // import { Dropdown } from "antd";
 import SettingsModal from "../settingsModal";
+import { useEffect } from "react";
 
 const BotHero = () => {
-//   const [isConnected, setIsConnected] = useState(false);
+  //   const [isConnected, setIsConnected] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
-//   const items = [
-//     {
-//       key: "1",
-//       label: <Link to={"/"}>Home</Link>,
-//     },
-//     {
-//       key: "2",
-//       label: <Link to={"/"}>Documentation</Link>,
-//     },
-//     {
-//       key: "3",
-//       label: <Link to={"/"}>Connect Wallet</Link>,
-//     },
-//   ];
+  const [wallet, setWallet] = useState(null);
 
-//   const connectWallet = () => {
-//     setIsConnected(true);
-//   };
+  useEffect(() => {
+    const wallet = localStorage.getItem("wallet");
+    if (wallet) {
+      setWallet(wallet);
+    }
+  }, []);
+  //   const items = [
+  //     {
+  //       key: "1",
+  //       label: <Link to={"/"}>Home</Link>,
+  //     },
+  //     {
+  //       key: "2",
+  //       label: <Link to={"/"}>Documentation</Link>,
+  //     },
+  //     {
+  //       key: "3",
+  //       label: <Link to={"/"}>Connect Wallet</Link>,
+  //     },
+  //   ];
+
+  //   const connectWallet = () => {
+  //     setIsConnected(true);
+  //   };
   return (
     <div className="hero py-7 bg-black">
       <div className="custom-container">
@@ -53,7 +62,7 @@ const BotHero = () => {
                 </div>
                 <button
                   className="text-white px-4 py-2 rounded-md md:block hidden"
-                //   onClick={connectWallet}
+                  //   onClick={connectWallet}
                 >
                   Balance: 0.5 ETH
                 </button>
@@ -135,7 +144,7 @@ const BotHero = () => {
                     className="text-white px-4 py-2 rounded-md md:block hidden"
                     // onClick={connectWallet}
                   >
-                    Wallet: 120355699daea
+                    Wallet: {wallet?.slice(0, 6)}...{wallet?.slice(-4)}
                   </button>
                   {/* <Dropdown
                     menu={{
@@ -216,9 +225,7 @@ const BotHero = () => {
       {/* matrix */}
 
       {/* settings popup */}
-      {showSettings && (
-        <SettingsModal setShowSettings={setShowSettings}/>
-      )}
+      {showSettings && <SettingsModal setShowSettings={setShowSettings} />}
     </div>
   );
 };
