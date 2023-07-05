@@ -10,6 +10,7 @@ import Settings from "../pages/settings";
 import Buy from "../pages/buy";
 import Terms from "../pages/terms-of-use";
 import Privacy from "../pages/privacy-policy";
+// import TestApp from "../pages/test";
 
 const router = createBrowserRouter([
     {
@@ -60,7 +61,11 @@ const router = createBrowserRouter([
                 element: <Withdraw />
             }
         ]
-    }
+    },
+    // {
+    //     path: '/test',
+    //     element: <TestApp />
+    // }
 ])
 
 export default router;

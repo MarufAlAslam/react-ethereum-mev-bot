@@ -27,19 +27,19 @@ const Subscription = () => {
           Your Free Trial ends in
         </p>
         <div className="flex justify-between items-center gap-3">
-          <div className="text-xl text-center ls-2 inline-block px-3 py-1 border border-[#393939] rounded mb-4 bg-[#1D1D1D]">
+          <div className="text-xl text-custom text-center ls-2 inline-block px-3 py-1 border border-[#393939] rounded mb-4 bg-[#1D1D1D]">
             04
             <br />
             Days
           </div>
           <div className="mb-3">:</div>
-          <div className="text-xl text-center ls-2 inline-block px-3 py-1 border border-[#393939] rounded mb-4 bg-[#1D1D1D]">
+          <div className="text-xl text-custom text-center ls-2 inline-block px-3 py-1 border border-[#393939] rounded mb-4 bg-[#1D1D1D]">
             05
             <br />
             Hours
           </div>
           <div className="mb-3">:</div>
-          <div className="text-xl text-center ls-2 inline-block px-3 py-1 border border-[#393939] rounded mb-4 bg-[#1D1D1D]">
+          <div className="text-xl text-custom text-center ls-2 inline-block px-3 py-1 border border-[#393939] rounded mb-4 bg-[#1D1D1D]">
             10
             <br />
             Min

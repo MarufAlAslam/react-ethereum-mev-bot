@@ -106,6 +106,12 @@ svg.mr-3.shape {
   background-position: center;
 }
 
+@media screen and (max-width: 1380px){
+  .text-custom{
+    font-size: 10px
+  }
+}
+
 @media screen and (max-width: 767px) {
   .mobile-icon {
     width: 20px;
