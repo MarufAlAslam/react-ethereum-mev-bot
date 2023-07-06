@@ -10,7 +10,7 @@ import walletconnect from "../../assets/images/walletconnect.png";
 
 import Web3 from "web3";
 import { useEffect } from "react";
-import { FaTimes } from "react-icons/fa";
+import { FaEthereum, FaTimes } from "react-icons/fa";
 
 const Hero = () => {
   const [isConnected, setIsConnected] = useState(false);
@@ -43,7 +43,11 @@ const Hero = () => {
   ];
 
   const handlePopUp = () => {
-    setShowPopUp(!showPopUp);
+    setShowPopUp(false);
+  };
+
+  const showPopUpModal = () => {
+    setShowPopUp(true);
   };
 
   const handleConnectWallet = async () => {
@@ -85,10 +89,10 @@ const Hero = () => {
     if (wallet) {
       // navigator("/bot");
       setIsConnected(true);
-      handlePopUp(); 
+      handlePopUp();
       setWallet(wallet);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // const connectWallet = () => {
@@ -103,7 +107,7 @@ const Hero = () => {
         ></div>
       )}
       {showPopUp && (
-        <div className="popup p-10 rounded-md bg-white fixed top-[50%] left-[50%] z-[100] translate-x-[-50%] translate-y-[-50%]">
+        <div className="popup md:w-auto w-[95%] p-10 rounded-md bg-white fixed top-[50%] left-[50%] z-[100] translate-x-[-50%] translate-y-[-50%]">
           {/* close button */}
           <button className="absolute top-0 right-0 p-4" onClick={handlePopUp}>
             <FaTimes className="text-black" />
@@ -113,11 +117,14 @@ const Hero = () => {
             Please Select your web3 compatible wallet to connect with MevBot
           </p>
           <div className="grid grid-cols-2 gap-8">
-            <button className="flex flex-col justify-center items-center p-4 bg-[#92cfab] rounded-md" onClick={handleConnectWallet}>
+            <button
+              className="flex flex-col justify-center items-center p-4 bg-[#92cfab] rounded-md"
+              onClick={handleConnectWallet}
+            >
               <img
                 src={metamask}
                 alt="metamask"
-                className="w-[150px] h-[150px] object-contain"
+                className="w-[150px] md:h-[150px] object-contain"
               />
               <h1 className="text-center text-black font-semibold mt-4">
                 Metamask
@@ -127,7 +134,7 @@ const Hero = () => {
               <img
                 src={walletconnect}
                 alt="metamask"
-                className="w-[150px] h-[150px] object-contain"
+                className="w-[150px] md:h-[150px] object-contain"
               />
               <h1 className="text-center text-black font-semibold mt-4">
                 Wallet Connect
@@ -238,7 +245,7 @@ const Hero = () => {
                       </Dropdown>
                     </div>
                     <button
-                      className="icon-holder p-3 px-4 md:bg-[#0E1F17] border-2 border-[#589B74] rounded"
+                      className="icon-holder p-3 px-4 md:bg-[#0E1F17] border-2 border-[#589B74] rounded md:block hidden"
                       onClick={handleDisconnectWallet}
                     >
                       <FaTimes className="text-[22px]" />
@@ -262,74 +269,43 @@ const Hero = () => {
                     </button>
                   </div>
                 ) : (
-                  <div className="md:bg-[#242424] flex rounded items-center">
-                    <div className="icon-holder p-3 px-4 md:bg-[#0E1F17] border-2 border-[#589B74] rounded">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="27.818"
-                        height="22.977"
-                        viewBox="0 0 27.818 22.977"
-                        className="mobile-icon"
+                  <>
+                    <div className="md:bg-[#242424] flex rounded items-center">
+                      <div className="icon-holder p-3 px-4 md:bg-[#0E1F17] border-2 border-[#589B74] rounded">
+                        <FaEthereum className="text-[22px]" />
+                      </div>
+                      <button
+                        className="text-white px-4 py-2 rounded-md md:block hidden"
+                        onClick={showPopUpModal}
                       >
-                        <path
-                          id="path0"
-                          d="M2.945,34.66A4.026,4.026,0,0,0-.128,37.616c-.16.626-.16,16.322,0,16.949a4.041,4.041,0,0,0,2.775,2.881l.407.127H24.285l.407-.127a4.041,4.041,0,0,0,2.775-2.881,10.463,10.463,0,0,0,.1-2.457V50.053H23.59c-4.8,0-4.848-.008-5.948-.84a3.965,3.965,0,0,1,.777-6.714c.774-.373.732-.37,5.171-.371h3.977V40.073a10.47,10.47,0,0,0-.1-2.457,4.07,4.07,0,0,0-2.747-2.881l-.38-.128L13.8,34.6c-8.594-.008-10.592,0-10.858.063m16.7,9.048a2.433,2.433,0,0,0-.635,4.55c.538.262.76.276,4.8.276h3.759V43.647l-3.814.006c-2.1,0-3.949.028-4.11.055m1.884,1.73a.745.745,0,0,1,0,1.3,2.181,2.181,0,0,1-2.107-.285.741.741,0,0,1,.285-1.019,3.5,3.5,0,0,1,1.82,0"
-                          transform="translate(0.248 -34.596)"
-                          fill="#fff"
-                          fillRule="evenodd"
-                        />
-                      </svg>
+                        Ethereum
+                      </button>
                     </div>
-                    <button
-                      className="text-white px-4 py-2 rounded-md md:block hidden"
-                      onClick={handlePopUp}
-                    >
-                      Connect Wallet
-                    </button>
-                    <Dropdown
-                      menu={{
-                        items,
-                      }}
-                      placement="bottomRight"
-                    >
-                      <button className="text-white ml-4 px-4 py-2 md:hidden block icon-holder p-3 md:bg-[#0E1F17] border-2 border-[#589B74] rounded">
+                    <div className="md:bg-[#242424] flex rounded items-center ml-3" onClick={showPopUpModal}>
+                      <div className="icon-holder p-3 px-4 md:bg-[#0E1F17] border-2 border-[#589B74] rounded">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          width="20.343"
-                          height="28.622"
-                          viewBox="0 0 24.343 21.622"
+                          width="27.818"
+                          height="22.977"
+                          viewBox="0 0 27.818 22.977"
+                          className="mobile-icon"
                         >
-                          <g
-                            id="Group_163012"
-                            data-name="Group 163012"
-                            transform="translate(-307.192 -93)"
-                          >
-                            <path
-                              id="Caminho_1848"
-                              data-name="Caminho 1848"
-                              d="M22.1,64.267H2.239a1.845,1.845,0,1,0,0,3.6H22.1a1.845,1.845,0,1,0,0-3.6Z"
-                              transform="translate(307.193 28.733)"
-                              fill="#fff"
-                            />
-                            <path
-                              id="Caminho_1849"
-                              data-name="Caminho 1849"
-                              d="M22.1,208.867H2.239a1.845,1.845,0,1,0,0,3.6H22.1a1.845,1.845,0,1,0,0-3.6Z"
-                              transform="translate(307.193 -106.858)"
-                              fill="#fff"
-                            />
-                            <path
-                              id="Caminho_1850"
-                              data-name="Caminho 1850"
-                              d="M22.1,353.467H2.239a1.845,1.845,0,1,0,0,3.6H22.1a1.845,1.845,0,1,0,0-3.6Z"
-                              transform="translate(307.193 -242.449)"
-                              fill="#fff"
-                            />
-                          </g>
+                          <path
+                            id="path0"
+                            d="M2.945,34.66A4.026,4.026,0,0,0-.128,37.616c-.16.626-.16,16.322,0,16.949a4.041,4.041,0,0,0,2.775,2.881l.407.127H24.285l.407-.127a4.041,4.041,0,0,0,2.775-2.881,10.463,10.463,0,0,0,.1-2.457V50.053H23.59c-4.8,0-4.848-.008-5.948-.84a3.965,3.965,0,0,1,.777-6.714c.774-.373.732-.37,5.171-.371h3.977V40.073a10.47,10.47,0,0,0-.1-2.457,4.07,4.07,0,0,0-2.747-2.881l-.38-.128L13.8,34.6c-8.594-.008-10.592,0-10.858.063m16.7,9.048a2.433,2.433,0,0,0-.635,4.55c.538.262.76.276,4.8.276h3.759V43.647l-3.814.006c-2.1,0-3.949.028-4.11.055m1.884,1.73a.745.745,0,0,1,0,1.3,2.181,2.181,0,0,1-2.107-.285.741.741,0,0,1,.285-1.019,3.5,3.5,0,0,1,1.82,0"
+                            transform="translate(0.248 -34.596)"
+                            fill="#fff"
+                            fillRule="evenodd"
+                          />
                         </svg>
+                      </div>
+                      <button
+                        className="text-white px-4 py-2 rounded-md md:block hidden"
+                      >
+                        Connect Wallet
                       </button>
-                    </Dropdown>
-                  </div>
+                    </div>
+                  </>
                 )}
               </div>
             </div>
