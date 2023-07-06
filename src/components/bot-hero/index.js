@@ -193,7 +193,7 @@ const BotHero = () => {
                     className="text-white px-4 py-2 rounded-md md:block hidden"
                     // onClick={connectWallet}
                   >
-                    Wallet: {wallet?.slice(0, 6)}...{wallet?.slice(-4)}
+                    Wallet: {wallet && wallet?.slice(0, 6)}...{ wallet && wallet?.slice(-4)}
                   </button>
                   {/* <Dropdown
                     menu={{
