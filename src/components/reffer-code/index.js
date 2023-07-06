@@ -7,7 +7,7 @@ const RefferCode = () => {
       <div className="inline-flex items-center py-3 pl-4 pr-4 bg-[#393939] rounded-t-md relative">
         <div className="relative z-20 flex justify-start items-center">
           {/* <img src={item.img} alt="" /> */}
-          <h1 className="text-white text-xl ml-2">My Refferel Code</h1>
+          <h1 className="text-white text-xl ml-2">My Referral Code</h1>
         </div>
         <img
           src={shape}

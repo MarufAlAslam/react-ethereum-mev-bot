@@ -1,21 +1,61 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/images/eth.png";
+import Web3 from "web3";
 import Rain from "../rain";
 // import { Dropdown } from "antd";
 import SettingsModal from "../settingsModal";
 import { useEffect } from "react";
+import { FaHome } from "react-icons/fa";
 
 const BotHero = () => {
   //   const [isConnected, setIsConnected] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [wallet, setWallet] = useState(null);
+  const [web3, setWeb3] = useState(null);
+  const [isConnected, setIsConnected] = useState(false);
+  const [balance, setBalance] = useState(0);
+
+  const handleConnectWallet = async () => {
+    const initWeb3 = async () => {
+      if (window.ethereum) {
+        const web3Instance = new Web3(window.ethereum);
+        await window.ethereum.enable(); // Request user permission
+        setWeb3(web3Instance);
+
+        // check if connected
+        const accounts = await web3Instance.eth.getAccounts();
+        if (accounts.length > 0) {
+          console.log(web3);
+          setIsConnected(true);
+          localStorage.setItem("wallet", accounts[0]);
+          setWallet(accounts[0]);
+
+          // get wallet balance
+          const balance = await web3Instance.eth.getBalance(accounts[0]);
+          console.log(balance);
+          setWallet(accounts[0]);
+          setBalance(balance);
+          console.log(accounts);
+        } else {
+          alert("Please connect your wallet");
+          setIsConnected(false);
+        }
+      }
+    };
+
+    initWeb3();
+  };
 
   useEffect(() => {
-    const wallet = localStorage.getItem("wallet");
-    if (wallet) {
-      setWallet(wallet);
+    handleConnectWallet();
+    if (isConnected) {
+      const wallet = localStorage.getItem("wallet");
+      if (wallet) {
+        setWallet(wallet);
+      }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   //   const items = [
   //     {
@@ -41,7 +81,14 @@ const BotHero = () => {
         {/* topbar */}
         <section>
           <div className="grid md:grid-cols-3 grid-cols-2 gap-2 mb-4">
-            <div className="md:flex items-center gap-[55px] hidden">
+            <div className="md:flex items-center gap-[15px] hidden">
+              <Link
+                to={"/"}
+                className="icon-holder p-3 px-4 md:bg-[#0E1F17] border-2 border-[#589B74] rounded"
+                onClick={() => setShowSettings(true)}
+              >
+                <FaHome className="text-2xl" />
+              </Link>
               <div className="md:bg-[#242424] flex rounded items-center">
                 <div className="icon-holder p-3 px-4 md:bg-[#0E1F17] border-2 border-[#589B74] rounded">
                   <svg
@@ -64,7 +111,7 @@ const BotHero = () => {
                   className="text-white px-4 py-2 rounded-md md:block hidden"
                   //   onClick={connectWallet}
                 >
-                  Balance: 0.5 ETH
+                  Balance: {balance} ETH
                 </button>
                 {/* <Dropdown
                   menu={{

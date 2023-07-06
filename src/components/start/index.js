@@ -25,8 +25,8 @@ const Start = () => {
                         </svg>
                     </Link>
                     <p className="mt-5 ls-2 text-lg">
-                        Please start the bot to <br/>
-                        Start Sanning the Mempool
+                        Please stop the bot to <br/>
+                        Stop Sanning the Mempool
                     </p>
                 </div>
             </div>

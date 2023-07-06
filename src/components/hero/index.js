@@ -7,6 +7,7 @@ import SettingsModal from "../settingsModal";
 
 import Web3 from "web3";
 import { useEffect } from "react";
+import { FaTimes } from "react-icons/fa";
 
 const Hero = () => {
   const [isConnected, setIsConnected] = useState(false);
@@ -65,6 +66,11 @@ const Hero = () => {
     initWeb3();
   };
 
+  const handleDisconnectWallet = () => {
+    setIsConnected(false);
+    localStorage.removeItem("wallet");
+  };
+
   useEffect(() => {
     const wallet = localStorage.getItem("wallet");
     if (wallet) {
@@ -85,7 +91,7 @@ const Hero = () => {
           <div className="grid md:grid-cols-3 grid-cols-2 gap-2 mb-4">
             <div className="md:flex items-center gap-[55px] hidden">
               <NavLink to="/bot" className="text-lg text-white">
-                Home
+                Bot Home
               </NavLink>
               <NavLink
                 target="_blank"
@@ -174,6 +180,12 @@ const Hero = () => {
                       </div>
                     </Dropdown>
                   </div>
+                  <button
+                    className="icon-holder p-3 px-4 md:bg-[#0E1F17] border-2 border-[#589B74] rounded"
+                    onClick={handleDisconnectWallet}
+                  >
+                    <FaTimes className="text-[22px]"/>
+                  </button>
                   <button
                     className="icon-holder p-3 px-4 md:bg-[#0E1F17] border-2 border-[#589B74] rounded"
                     onClick={() => setShowSettings(true)}
