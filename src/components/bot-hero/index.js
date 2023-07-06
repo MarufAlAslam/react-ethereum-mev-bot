@@ -47,6 +47,8 @@ const BotHero = () => {
     initWeb3();
   };
 
+  console.log(balance)
+
   useEffect(() => {
     handleConnectWallet();
     if (isConnected) {
@@ -111,7 +113,7 @@ const BotHero = () => {
                   className="text-white px-4 py-2 rounded-md md:block hidden"
                   //   onClick={connectWallet}
                 >
-                  Balance: {balance} ETH
+                  Balance: {balance ? balance : 0} ETH
                 </button>
                 {/* <Dropdown
                   menu={{
