@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/images/eth.png";
 import Rain from "../rain";
 import { Dropdown } from "antd";
@@ -12,7 +12,7 @@ const Hero = () => {
   const [isConnected, setIsConnected] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [web3, setWeb3] = useState(null);
-  const navigator = useNavigate();
+  // const navigator = useNavigate();
   const [wallet, setWallet] = useState(null);
   const items = [
     {
@@ -46,6 +46,7 @@ const Hero = () => {
         // check if connected
         const accounts = await web3Instance.eth.getAccounts();
         if (accounts.length > 0) {
+          console.log(web3);
           setIsConnected(true);
           localStorage.setItem("wallet", accounts[0]);
 

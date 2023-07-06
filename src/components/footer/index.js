@@ -38,7 +38,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <p className="text-lg text-white mt-4 text-center">Mev Bot © Copyright 2023</p>
+          <p className="text-lg text-white mt-4 text-center">AIWeb3Labs © Copyright 2023</p>
         </section>
       </div>
     </div>
