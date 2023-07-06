@@ -18,6 +18,7 @@ const Hero = () => {
   const [web3, setWeb3] = useState(null);
 
   const [showPopUp, setShowPopUp] = useState(false);
+  const [showNetwork, setShowNetwork] = useState(true);
   // const navigator = useNavigate();
   const [wallet, setWallet] = useState(null);
   const items = [
@@ -95,6 +96,10 @@ const Hero = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const networkChanger = async () => {
+    setShowNetwork(!showNetwork);
+  };
+
   // const connectWallet = () => {
   //   setIsConnected(true);
   // };
@@ -104,6 +109,12 @@ const Hero = () => {
         <div
           className="popup-bg fixed top-0 left-0 w-full h-screen bg-black opacity-70 z-50"
           onClick={handlePopUp}
+        ></div>
+      )}
+      {showNetwork && (
+        <div
+          className="popup-bg fixed top-0 left-0 w-full h-screen bg-black opacity-70 z-50"
+          onClick={networkChanger}
         ></div>
       )}
       {showPopUp && (
@@ -143,6 +154,43 @@ const Hero = () => {
           </div>
         </div>
       )}
+
+      {showNetwork && (
+        <div className="popup bg-white p-10 w-[400px] max-w-full fixed top-[50%] left-[50%] z-[100] translate-x-[-50%] translate-y-[-50%] rounded-md">
+          {/* close button */}
+          <button
+            className="absolute top-0 right-0 p-4"
+            onClick={networkChanger}
+          >
+            <FaTimes className="text-black" />
+          </button>
+
+          <div className="mt-4 text-black font-bold ls-2 mb-4">
+            Change Network
+          </div>
+          <div className="flex mt-3 justify-between items-center">
+            <label htmlFor="eth" className="flex items-center gap-3">
+              <FaEthereum className="text-green-500" />
+              <span className="text-black">
+                <strong>Ethereum</strong>
+              </span>
+            </label>
+
+            <input type="radio" id="eth" name="network" />
+          </div>
+          <div className="flex mt-3 justify-between items-center">
+            <label htmlFor="arb" className="flex items-center gap-3">
+              <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxNiAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0wIDQuOTk1OTVWMTMuMDA0MUMwIDEzLjMzMjIgMC4xNzYyODUgMTMuNjM1NyAwLjQ2Mjg5OCAxMy44MDA5TDcuNTMwODYgMTcuODc0N0M3LjgyMDgyIDE4LjA0MTggOC4xNzkxOSAxOC4wNDE4IDguNDY5MTQgMTcuODc0N0wxNS41MzcxIDEzLjgwMDlDMTUuODIzNyAxMy42MzU3IDE2IDEzLjMzMjIgMTYgMTMuMDA0MVY0Ljk5NTk1QzE2IDQuNjY3NzUgMTUuODIzNyA0LjM2NDI5IDE1LjUzNzEgNC4xOTkxTDguNDY5MTQgMC4xMjUzNDFDOC4xNzkxOSAtMC4wNDE3ODA3IDcuODIwODEgLTAuMDQxNzgwMiA3LjUzMDg2IDAuMTI1MzQyTDAuNDYyODk4IDQuMTk5MUMwLjE3NjI4NCA0LjM2NDI5IDAgNC42Njc3NSAwIDQuOTk1OTVaTTcuNzY0OTEgMS4yMjA0NEwxLjMxODMgNC45NDcxOUMxLjE3NTI5IDUuMDI5ODcgMS4wODczOCA1LjE4MTQzIDEuMDg3MzggNS4zNDUzMlYxMS40NjIxTDQuNDM5OTMgNS45NzYxQzQuNzIxMjkgNS41MTU3IDUuMjI1NDYgNS4yMzQzOCA1Ljc2OTIzIDUuMjM0MzhINy42ODkzMkwyLjQxNTEgMTMuNjg2OUwyLjk4NzkyIDE0LjAxOEw4LjM4ODM1IDUuMjM0MzhIMTEuMDI5MUw1LjEwODk4IDE1LjI0NDJMNy43NjQ5MSAxNi43Nzk2QzcuOTEwMTUgMTYuODYzNSA4LjA4OTg1IDE2Ljg2MzUgOC4yMzUwOSAxNi43Nzk2TDEwLjU5MTcgMTUuNDE3Mkw4LjA3NzY3IDExLjYxMjlMOS41NTM0IDkuMDc2ODRMMTIuODMxNiAxNC4xMjI0TDEzLjQxNzQgMTMuNzgzN0wxMC4wOTcxIDguMzA4MzVMMTEuMzM5OCA2LjA3OTcyTDE0LjkxMjYgMTEuMjc4M1Y1LjM0NTMyQzE0LjkxMjYgNS4xODE0MyAxNC44MjQ3IDUuMDI5ODcgMTQuNjgxNyA0Ljk0NzE5TDguMjM1MSAxLjIyMDQ0QzguMDg5ODUgMS4xMzY0NyA3LjkxMDE1IDEuMTM2NDcgNy43NjQ5MSAxLjIyMDQ0WiIgZmlsbD0iIzQ0RjFBNiIvPgo8L3N2Zz4K" />
+              <span className="text-black">
+                <strong>Arbitrum One</strong>
+              </span>
+            </label>
+
+            <input type="radio" id="arb" name="network" />
+          </div>
+        </div>
+      )}
+
       <div className="hero py-7 bg-black">
         <div className="custom-container">
           {/* topbar */}
@@ -276,12 +324,15 @@ const Hero = () => {
                       </div>
                       <button
                         className="text-white px-4 py-2 rounded-md md:block hidden"
-                        onClick={showPopUpModal}
+                        onClick={networkChanger}
                       >
                         Ethereum
                       </button>
                     </div>
-                    <div className="md:bg-[#242424] flex rounded items-center ml-3" onClick={showPopUpModal}>
+                    <div
+                      className="md:bg-[#242424] flex rounded items-center ml-3"
+                      onClick={showPopUpModal}
+                    >
                       <div className="icon-holder p-3 px-4 md:bg-[#0E1F17] border-2 border-[#589B74] rounded">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -299,9 +350,7 @@ const Hero = () => {
                           />
                         </svg>
                       </div>
-                      <button
-                        className="text-white px-4 py-2 rounded-md md:block hidden"
-                      >
+                      <button className="text-white px-4 py-2 rounded-md md:block hidden">
                         Connect Wallet
                       </button>
                     </div>
