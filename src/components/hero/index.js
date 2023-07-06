@@ -18,7 +18,7 @@ const Hero = () => {
   const [web3, setWeb3] = useState(null);
 
   const [showPopUp, setShowPopUp] = useState(false);
-  const [showNetwork, setShowNetwork] = useState(true);
+  const [showNetwork, setShowNetwork] = useState(false);
   // const navigator = useNavigate();
   const [wallet, setWallet] = useState(null);
   const items = [
