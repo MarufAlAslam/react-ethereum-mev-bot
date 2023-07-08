@@ -107,13 +107,13 @@ const Hero = () => {
         ></div>
       )}
       {showPopUp && (
-        <div className="popup md:w-auto w-[95%] p-10 rounded-md bg-white fixed top-[50%] left-[50%] z-[100] translate-x-[-50%] translate-y-[-50%]">
+        <div className="popup md:w-auto w-[95%] p-10 rounded-md bg-black border border-whtie fixed top-[50%] left-[50%] z-[100] translate-x-[-50%] translate-y-[-50%]">
           {/* close button */}
           <button className="absolute top-0 right-0 p-4" onClick={handlePopUp}>
-            <FaTimes className="text-black" />
+            <FaTimes className="text-white" />
           </button>
-          <h2 className="text-black font-bold mb-2">Your Wallet</h2>
-          <p className="text-black mb-5">
+          <h2 className="text-white font-bold mb-2">Your Wallet</h2>
+          <p className="text-white mb-5">
             Please Select your web3 compatible wallet to connect with MevBot
           </p>
           <div className="grid grid-cols-2 gap-8">

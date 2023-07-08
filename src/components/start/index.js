@@ -26,7 +26,7 @@ const Start = () => {
                     </Link>
                     <p className="mt-5 ls-2 text-lg">
                         Please stop the bot to <br/>
-                        Stop Sanning the Mempool
+                        Stop Scanning the Mempool
                     </p>
                 </div>
             </div>

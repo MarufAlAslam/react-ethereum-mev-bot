@@ -22,7 +22,7 @@ const Activity = () => {
         />
       </div>
 
-      <div className="border-2 flex flex-col gap-4 border-[#393939] p-5 rounded-r rounded-b">
+      <div className="border-2 flex flex-col gap-4 border-[#393939] p-5 rounded-r rounded-b h-[150px] overflow-y-auto">
         {activityData.map((item, index) => (
           <div className="flex justify-start items-center gap-3">
             <FaArrowRight className="text-green-600" />
