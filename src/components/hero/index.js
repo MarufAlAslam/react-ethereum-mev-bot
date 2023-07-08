@@ -1,9 +1,11 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/images/eth.png";
 import Rain from "../rain";
 import { Dropdown } from "antd";
 import SettingsModal from "../settingsModal";
+import arb from "../../assets/images/svg/arb.svg";
 
 import metamask from "../../assets/images/metamask.png";
 import walletconnect from "../../assets/images/walletconnect.png";
@@ -16,39 +18,12 @@ const Hero = () => {
   const [isConnected, setIsConnected] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [web3, setWeb3] = useState(null);
+  const [network, setNetwork] = useState("eth");
 
   const [showPopUp, setShowPopUp] = useState(false);
+  const [showNetwork, setShowNetwork] = useState(false);
   // const navigator = useNavigate();
   const [wallet, setWallet] = useState(null);
-  const items = [
-    {
-      key: "1",
-      label: <Link to={"/"}>Home</Link>,
-    },
-    {
-      key: "2",
-      label: (
-        <Link
-          target="_blank"
-          to={"https://app.gitbook.com/s/crOtyWgVQIVIdbrLBJMw"}
-        >
-          Documentation
-        </Link>
-      ),
-    },
-    {
-      key: "3",
-      label: <Link to={"/"}>Connect Wallet</Link>,
-    },
-  ];
-
-  const handlePopUp = () => {
-    setShowPopUp(false);
-  };
-
-  const showPopUpModal = () => {
-    setShowPopUp(true);
-  };
 
   const handleConnectWallet = async () => {
     const initWeb3 = async () => {
@@ -84,6 +59,40 @@ const Hero = () => {
     localStorage.removeItem("wallet");
   };
 
+  const items = [
+    {
+      key: "1",
+      label: <Link to={"/"}>Home</Link>,
+    },
+    {
+      key: "2",
+      label: (
+        <Link
+          target="_blank"
+          to={"https://app.gitbook.com/s/crOtyWgVQIVIdbrLBJMw"}
+        >
+          Documentation
+        </Link>
+      ),
+    },
+    {
+      key: "3",
+      label: isConnected ? (
+        <Link to={"/"}>Disconnect Wallet</Link>
+      ) : (
+        <button onClick={handleDisconnectWallet}>Connect Wallet</button>
+      ),
+    },
+  ];
+
+  const handlePopUp = () => {
+    setShowPopUp(false);
+  };
+
+  const showPopUpModal = () => {
+    setShowPopUp(true);
+  };
+
   useEffect(() => {
     const wallet = localStorage.getItem("wallet");
     if (wallet) {
@@ -95,15 +104,30 @@ const Hero = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const networkChanger = async () => {
+    setShowNetwork(!showNetwork);
+  };
+
   // const connectWallet = () => {
   //   setIsConnected(true);
   // };
+
+  const networkSelector = (e) => {
+    setNetwork(e.target.value);
+    networkChanger();
+  };
   return (
     <>
       {showPopUp && (
         <div
           className="popup-bg fixed top-0 left-0 w-full h-screen bg-black opacity-70 z-50"
           onClick={handlePopUp}
+        ></div>
+      )}
+      {showNetwork && (
+        <div
+          className="popup-bg fixed top-0 left-0 w-full h-screen bg-black opacity-70 z-50"
+          onClick={networkChanger}
         ></div>
       )}
       {showPopUp && (
@@ -143,6 +167,55 @@ const Hero = () => {
           </div>
         </div>
       )}
+
+      {showNetwork && (
+        <form className="popup bg-black border border-white p-10 w-[400px] max-w-full fixed top-[50%] left-[50%] z-[100] translate-x-[-50%] translate-y-[-50%] rounded-md">
+          {/* close button */}
+          <button
+            className="absolute top-0 right-0 p-4"
+            onClick={networkChanger}
+          >
+            <FaTimes className="text-white" />
+          </button>
+
+          <div className="mt-4 text-white font-bold ls-2 mb-4">
+            Change Network
+          </div>
+          <div className="flex mt-3 justify-between items-center">
+            <label htmlFor="eth" className="flex items-center gap-3">
+              <FaEthereum className="text-green-500" />
+              <span className="text-green-500">
+                <strong>Ethereum</strong>
+              </span>
+            </label>
+
+            <input
+              type="radio"
+              value="eth"
+              id="eth"
+              name="network"
+              onChange={networkSelector}
+            />
+          </div>
+          <div className="flex mt-3 justify-between items-center">
+            <label htmlFor="arb" className="flex items-center gap-3">
+              <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxNiAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0wIDQuOTk1OTVWMTMuMDA0MUMwIDEzLjMzMjIgMC4xNzYyODUgMTMuNjM1NyAwLjQ2Mjg5OCAxMy44MDA5TDcuNTMwODYgMTcuODc0N0M3LjgyMDgyIDE4LjA0MTggOC4xNzkxOSAxOC4wNDE4IDguNDY5MTQgMTcuODc0N0wxNS41MzcxIDEzLjgwMDlDMTUuODIzNyAxMy42MzU3IDE2IDEzLjMzMjIgMTYgMTMuMDA0MVY0Ljk5NTk1QzE2IDQuNjY3NzUgMTUuODIzNyA0LjM2NDI5IDE1LjUzNzEgNC4xOTkxTDguNDY5MTQgMC4xMjUzNDFDOC4xNzkxOSAtMC4wNDE3ODA3IDcuODIwODEgLTAuMDQxNzgwMiA3LjUzMDg2IDAuMTI1MzQyTDAuNDYyODk4IDQuMTk5MUMwLjE3NjI4NCA0LjM2NDI5IDAgNC42Njc3NSAwIDQuOTk1OTVaTTcuNzY0OTEgMS4yMjA0NEwxLjMxODMgNC45NDcxOUMxLjE3NTI5IDUuMDI5ODcgMS4wODczOCA1LjE4MTQzIDEuMDg3MzggNS4zNDUzMlYxMS40NjIxTDQuNDM5OTMgNS45NzYxQzQuNzIxMjkgNS41MTU3IDUuMjI1NDYgNS4yMzQzOCA1Ljc2OTIzIDUuMjM0MzhINy42ODkzMkwyLjQxNTEgMTMuNjg2OUwyLjk4NzkyIDE0LjAxOEw4LjM4ODM1IDUuMjM0MzhIMTEuMDI5MUw1LjEwODk4IDE1LjI0NDJMNy43NjQ5MSAxNi43Nzk2QzcuOTEwMTUgMTYuODYzNSA4LjA4OTg1IDE2Ljg2MzUgOC4yMzUwOSAxNi43Nzk2TDEwLjU5MTcgMTUuNDE3Mkw4LjA3NzY3IDExLjYxMjlMOS41NTM0IDkuMDc2ODRMMTIuODMxNiAxNC4xMjI0TDEzLjQxNzQgMTMuNzgzN0wxMC4wOTcxIDguMzA4MzVMMTEuMzM5OCA2LjA3OTcyTDE0LjkxMjYgMTEuMjc4M1Y1LjM0NTMyQzE0LjkxMjYgNS4xODE0MyAxNC44MjQ3IDUuMDI5ODcgMTQuNjgxNyA0Ljk0NzE5TDguMjM1MSAxLjIyMDQ0QzguMDg5ODUgMS4xMzY0NyA3LjkxMDE1IDEuMTM2NDcgNy43NjQ5MSAxLjIyMDQ0WiIgZmlsbD0iIzQ0RjFBNiIvPgo8L3N2Zz4K" />
+              <span className="text-green-500">
+                <strong>Arbitrum One</strong>
+              </span>
+            </label>
+
+            <input
+              type="radio"
+              value="arb"
+              id="arb"
+              name="network"
+              onChange={networkSelector}
+            />
+          </div>
+        </form>
+      )}
+
       <div className="hero py-7 bg-black">
         <div className="custom-container">
           {/* topbar */}
@@ -270,18 +343,25 @@ const Hero = () => {
                   </div>
                 ) : (
                   <>
-                    <div className="md:bg-[#242424] flex rounded items-center">
+                    <div
+                      className="md:bg-[#242424] flex rounded items-center"
+                      onClick={networkChanger}
+                    >
                       <div className="icon-holder p-3 px-4 md:bg-[#0E1F17] border-2 border-[#589B74] rounded">
-                        <FaEthereum className="text-[22px]" />
+                        {network === "eth" ? (
+                          <FaEthereum className="text-[22px]" />
+                        ) : (
+                          <img src={arb} alt="arb" className="min-w-[20px]" />
+                        )}
                       </div>
-                      <button
-                        className="text-white px-4 py-2 rounded-md md:block hidden"
-                        onClick={showPopUpModal}
-                      >
-                        Ethereum
+                      <button className="text-white px-4 py-2 rounded-md md:block hidden">
+                        {network === "eth" ? "Ethereum" : "Arbitrum"}
                       </button>
                     </div>
-                    <div className="md:bg-[#242424] flex rounded items-center ml-3" onClick={showPopUpModal}>
+                    <div
+                      className="md:bg-[#242424] flex rounded items-center ml-3"
+                      onClick={showPopUpModal}
+                    >
                       <div className="icon-holder p-3 px-4 md:bg-[#0E1F17] border-2 border-[#589B74] rounded">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -299,12 +379,54 @@ const Hero = () => {
                           />
                         </svg>
                       </div>
-                      <button
-                        className="text-white px-4 py-2 rounded-md md:block hidden"
-                      >
+                      <button className="text-white px-4 py-2 rounded-md md:block hidden">
                         Connect Wallet
                       </button>
                     </div>
+
+                    <Dropdown
+                      menu={{
+                        items,
+                      }}
+                      placement="bottomRight"
+                    >
+                      <div className="text-white ml-4 px-4 py-2 md:hidden block icon-holder p-3 md:bg-[#0E1F17] border-2 border-[#589B74] rounded">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20.343"
+                          height="28.622"
+                          viewBox="0 0 24.343 21.622"
+                        >
+                          <g
+                            id="Group_163012"
+                            data-name="Group 163012"
+                            transform="translate(-307.192 -93)"
+                          >
+                            <path
+                              id="Caminho_1848"
+                              data-name="Caminho 1848"
+                              d="M22.1,64.267H2.239a1.845,1.845,0,1,0,0,3.6H22.1a1.845,1.845,0,1,0,0-3.6Z"
+                              transform="translate(307.193 28.733)"
+                              fill="#fff"
+                            />
+                            <path
+                              id="Caminho_1849"
+                              data-name="Caminho 1849"
+                              d="M22.1,208.867H2.239a1.845,1.845,0,1,0,0,3.6H22.1a1.845,1.845,0,1,0,0-3.6Z"
+                              transform="translate(307.193 -106.858)"
+                              fill="#fff"
+                            />
+                            <path
+                              id="Caminho_1850"
+                              data-name="Caminho 1850"
+                              d="M22.1,353.467H2.239a1.845,1.845,0,1,0,0,3.6H22.1a1.845,1.845,0,1,0,0-3.6Z"
+                              transform="translate(307.193 -242.449)"
+                              fill="#fff"
+                            />
+                          </g>
+                        </svg>
+                      </div>
+                    </Dropdown>
                   </>
                 )}
               </div>
